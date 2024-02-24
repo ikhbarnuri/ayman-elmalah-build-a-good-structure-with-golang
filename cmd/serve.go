@@ -1,9 +1,7 @@
 package cmd
 
 import (
-	"ayman-elmalah-build-a-good-structure-with-golang/package/config"
-	"ayman-elmalah-build-a-good-structure-with-golang/package/routing"
-	"github.com/gin-gonic/gin"
+	"ayman-elmalah-build-a-good-structure-with-golang/package/bootstrap"
 	"github.com/spf13/cobra"
 )
 
@@ -21,18 +19,5 @@ var serveCmd = &cobra.Command{
 }
 
 func serve() {
-	config.Set()
-	configs := config.Get()
-
-	routing.Init()
-	router := routing.GetRouter()
-
-	router.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message":  "pong",
-			"app_name": configs.App.Name,
-		})
-	})
-
-	routing.Serve()
+	bootstrap.Serve()
 }
