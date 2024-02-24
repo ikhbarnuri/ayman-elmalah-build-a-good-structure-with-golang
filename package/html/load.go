@@ -3,5 +3,5 @@ package html
 import "github.com/gin-gonic/gin"
 
 func LoadHTML(router *gin.Engine) {
-	router.LoadHTMLGlob("internal/**/**/**/*.html")
+	router.LoadHTMLGlob("internal/**/**/**/*.gohtml")
 }
