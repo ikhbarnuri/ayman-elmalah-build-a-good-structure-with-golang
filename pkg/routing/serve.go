@@ -1,7 +1,7 @@
 package routing
 
 import (
-	"ayman-elmalah-build-a-good-structure-with-golang/package/config"
+	"ayman-elmalah-build-a-good-structure-with-golang/pkg/config"
 	"fmt"
 	"log"
 )

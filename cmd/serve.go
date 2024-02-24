@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"ayman-elmalah-build-a-good-structure-with-golang/package/bootstrap"
+	"ayman-elmalah-build-a-good-structure-with-golang/pkg/bootstrap"
 	"github.com/spf13/cobra"
 )
 

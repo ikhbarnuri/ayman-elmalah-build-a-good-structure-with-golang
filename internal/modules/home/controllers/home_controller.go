@@ -1,7 +1,7 @@
 package controllers
 
 import (
-	"ayman-elmalah-build-a-good-structure-with-golang/package/html"
+	"ayman-elmalah-build-a-good-structure-with-golang/pkg/html"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
