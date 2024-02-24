@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"ayman-elmalah-build-a-good-structure-with-golang/package/config"
-	"fmt"
+	"ayman-elmalah-build-a-good-structure-with-golang/package/routing"
 	"github.com/gin-gonic/gin"
 	"github.com/spf13/cobra"
 )
@@ -24,13 +24,15 @@ func serve() {
 	config.Set()
 	configs := config.Get()
 
-	r := gin.Default()
-	r.GET("/ping", func(c *gin.Context) {
+	routing.Init()
+	router := routing.GetRouter()
+
+	router.GET("/ping", func(c *gin.Context) {
 		c.JSON(200, gin.H{
 			"message":  "pong",
 			"app_name": configs.App.Name,
 		})
 	})
 
-	r.Run(fmt.Sprintf("%s:%s", configs.Server.Host, configs.Server.Port))
+	routing.Serve()
 }
