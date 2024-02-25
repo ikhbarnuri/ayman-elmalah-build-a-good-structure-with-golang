@@ -1,8 +1,10 @@
 package services
 
-import "ayman-elmalah-build-a-good-structure-with-golang/internal/modules/article/models"
+import (
+	"ayman-elmalah-build-a-good-structure-with-golang/internal/modules/article/responses"
+)
 
 type ArticleServiceInterface interface {
-	GetFeaturedArticles() []models.Article
-	GetStoriesArticles() []models.Article
+	GetFeaturedArticles() responses.Articles
+	GetStoriesArticles() responses.Articles
 }

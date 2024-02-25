@@ -2,6 +2,7 @@ package controllers
 
 import (
 	"ayman-elmalah-build-a-good-structure-with-golang/internal/modules/article/services"
+	"ayman-elmalah-build-a-good-structure-with-golang/pkg/html"
 	"github.com/gin-gonic/gin"
 	"net/http"
 )
@@ -17,11 +18,7 @@ func New() *Controller {
 }
 
 func (controller *Controller) Index(c *gin.Context) {
-	//html.Render(c, http.StatusOK, "modules/home/html/home", gin.H{
-	//	"title": "Home Page",
-	//})
-	c.JSON(http.StatusOK, gin.H{
-		"articles": controller.articleService.GetFeaturedArticles(),
-		"stories":  controller.articleService.GetStoriesArticles(),
+	html.Render(c, http.StatusOK, "modules/home/html/home", gin.H{
+		"title": "Home Page",
 	})
 }
