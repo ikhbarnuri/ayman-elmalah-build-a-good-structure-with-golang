@@ -4,4 +4,5 @@ import models2 "ayman-elmalah-build-a-good-structure-with-golang/internal/module
 
 type ArticleRepositoryInterface interface {
 	List(limit int) []models2.Article
+	Find(id int) models2.Article
 }
