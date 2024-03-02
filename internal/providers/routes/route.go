@@ -1,10 +1,12 @@
 package routes
 
 import (
-	"ayman-elmalah-build-a-good-structure-with-golang/internal/modules/home/routes"
+	articleRoutes "ayman-elmalah-build-a-good-structure-with-golang/internal/modules/article/routes"
+	homeRoutes "ayman-elmalah-build-a-good-structure-with-golang/internal/modules/home/routes"
 	"github.com/gin-gonic/gin"
 )
 
 func RegisterRoute(router *gin.Engine) {
-	routes.Routes(router)
+	homeRoutes.Routes(router)
+	articleRoutes.Routes(router)
 }
